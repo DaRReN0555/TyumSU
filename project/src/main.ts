@@ -1,4 +1,4 @@
-import { Application, Container, Graphics, TilingSprite, Assets, WRAP_MODES, Sprite, TextStyle, Text, GraphicsContextRenderData } from "pixi.js";
+import { Application, Container, Graphics, TilingSprite, Assets, WRAP_MODES, Sprite, TextStyle, Text } from "pixi.js";
 
 const app = new Application()
 await app.init({
@@ -85,12 +85,10 @@ bg2.zIndex = 1000
 app.stage.addChild(bg2);
 
 const bgText = new Text(
-    "Игра ''Сортировка мусора''\n" +
-    "Учебный проект по курсу Мастерских С.В.\n" +
-    "Преподаватель: Мастерских Светлана Валерьевна\n" +
-    "Студент: Рамазанов Эмир\n" +
-    "Цель игры - научиться сортировать отходы по типам: пластик, бумага, металл.\n" +
-    "Нажмите «Начать», чтобы приступить к игре.",
+`The game "Sorting garbage"\n` +
+`Student: Ramazanov Emir\n` +
+`The goal of the game is to learn how to sort waste by type: plastic, paper, metal.\n`+
+`Click "Start" to start the game.`,
     textStyle2
 );
 
@@ -121,7 +119,6 @@ app.stage.addChild(buttonText);
 
 let buttonPressed = false;
 let buttonOffset = 0;
-const buttonTargetOffset = 0;
 const buttonSpeed = 0.2;
 
 bgButton.interactive = true;
@@ -135,7 +132,7 @@ bgButton.on("pointerup", () => {
     buttonPressed = false;
     buttonClick = true
 
-    app.ticker.add(function startAnimation(delta) {
+    app.ticker.add(function startAnimation() {
         const speed = 10;
         bg1.y -= speed;
         bgText.y -= speed;
