@@ -250,7 +250,7 @@ const trash3Sign = new Sprite(signTexture);
 trash3Sign.position.set(trash3.x + 70, -195);
 container.addChild(trash3Sign);
 
-const trash3Text = new Text("METALL", textStyle);
+const trash3Text = new Text("METAL", textStyle);
 trash3Text.position.set(trash3.x + 62, -135);
 container.addChild(trash3Text);
 
